@@ -1,6 +1,7 @@
 const db = require('../db');
 
 exports.getAllBooks = (req, res) => {
+  console.log('📚 Llegó la petición GET /api/books');
   db.query('SELECT * FROM books', (err, results) => {
     if (err) return res.status(500).send(err);
     res.json(results);

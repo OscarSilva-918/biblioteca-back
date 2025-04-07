@@ -4,10 +4,11 @@ const app = express();
 const path = require('path');
 const db = require('./db');
 
-// Carga el archivo .env dependiendo del entorno
 const envPath = process.env.NODE_ENV === 'production' 
   ? path.resolve(__dirname, '.env.production') 
   : path.resolve(__dirname, '.env');
+
+  require('dotenv').config({ path: envPath });
 
   app.get('/ping', (req, res) => {
     res.status(200).json({ message: 'pong 🏓 hello' });
