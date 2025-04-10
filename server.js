@@ -10,20 +10,6 @@ const envPath = process.env.NODE_ENV === 'production'
 
   require('dotenv').config({ path: envPath });
 
-  app.get('/ping', (req, res) => {
-    res.status(200).json({ message: 'pong 🏓 hello' });
-  });
-  
-  app.get('/dbtest', (req, res) => {
-    db.query('SELECT 1 + 1 AS result', (err, results) => {
-      if (err) {
-        console.error('DB error:', err);
-        return res.status(500).json({ error: 'DB error', details: err.message });
-      }
-      res.status(200).json({ message: 'DB is working!', result: results[0].result });
-    });
-  });
-
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
