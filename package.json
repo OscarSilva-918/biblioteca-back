@@ -2,10 +2,10 @@
   "name": "biblioteca-app",
   "version": "1.0.0",
   "main": "index.js",
- "scripts": {
-  "start": "NODE_ENV=production node server.js",
-  "dev": "NODE_ENV=development node server.js"
-},
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,9 +13,12 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cloudinary": "^2.6.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.14.0"
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.0",
+    "streamifier": "^0.1.1"
   }
 }
