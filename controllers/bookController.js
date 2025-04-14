@@ -3,10 +3,14 @@ const db = require('../db');
 exports.getAllBooks = (req, res) => {
   console.log('📚 Llegó la petición GET /api/books');
   db.query('SELECT * FROM books', (err, results) => {
-    if (err) return res.status(500).send(err);
+    if (err) {
+      console.error('❌ Error en la consulta a la base de datos:', err);
+      return res.status(500).send(err);
+    }
     res.json(results);
   });
 };
+
 
 exports.addBook = (req, res) => {
   const { title, author } = req.body;
