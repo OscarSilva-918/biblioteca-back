@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require('cors')
 const uploadRoutes = require('./routes/upload');
 const express = require('express');
 const app = express();
@@ -6,6 +7,8 @@ const path = require('path');
 const authRoutes = require('./routes/auth');
 const bookRoutes = require('./routes/books');
 const db = require('./db');
+
+app.use(cors())
 
 const envPath = process.env.NODE_ENV === 'production' 
   ? path.resolve(__dirname, '.env.production') 
