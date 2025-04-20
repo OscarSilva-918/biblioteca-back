@@ -1,11 +1,13 @@
 require('dotenv').config();
 const cors = require('cors')
+require('./keepAlive');
 const uploadRoutes = require('./routes/upload');
 const express = require('express');
 const app = express();
 const path = require('path');
 const authRoutes = require('./routes/auth');
 const bookRoutes = require('./routes/books');
+
 const db = require('./db');
 
 app.use(cors())
